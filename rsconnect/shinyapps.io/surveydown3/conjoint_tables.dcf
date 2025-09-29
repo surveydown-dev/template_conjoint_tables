@@ -1,0 +1,10 @@
+name: conjoint_tables
+title:
+username: surveydown3
+account: surveydown3
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 14440047
+bundleId: 10969009
+url: https://surveydown3.shinyapps.io/conjoint_tables/
+version: 1
