@@ -7,8 +7,7 @@
 #   'here',
 #   'glue',
 #   'readr',
-#   'dplyr',
-#   'kableExtra'
+#   'dplyr'
 # ))
 
 # Load packages
@@ -18,6 +17,10 @@ library(readr)
 library(glue)
 library(here)
 library(kableExtra)
+
+# Read in the full survey design file
+# We'll use this in the server to create the choice questions
+design <- read_csv(here("data", "choice_questions.csv"))
 
 # Database setup --------------------------------------------------------------
 #
@@ -44,6 +47,44 @@ db <- sd_db_connect(ignore = TRUE)
 
 ui <- sd_ui()
 
+# Helper functions ------------------------------------------------------------
+#
+# Function to create the question options based on design values
+#
+# CUSTOMIZE THIS FUNCTION FOR YOUR STUDY:
+#
+# - Replace the attributes (type, price, freshness) with your own product features
+# - Update the image display if needed (or remove if not using images)
+# - Modify the formatting/layout of each option as desired
+# - Modify the number of alternatives appropriately to your study (alt1, alt2, alt3)
+
+make_cbc_table <- function(df) {
+  alts <- df |>
+    mutate(
+      price = paste(scales::dollar(price), "/ lb"),
+      image = paste0('<img src="', image, '" width=100>')
+    ) |>
+    # Make nicer attribute labels
+    select(
+      `Option:` = altID,
+      ` ` = image,
+      `Price:` = price,
+      `Type:` = type,
+      `Freshness:` = freshness
+    )
+  row.names(alts) <- NULL # Drop row names
+
+  table <- kbl(t(alts), escape = FALSE) |>
+    kable_styling(
+      bootstrap_options = c("striped", "hover", "condensed"),
+      full_width = FALSE,
+      position = "center"
+    )
+  function() {
+    table
+  }
+}
+
 # Server setup ----------------------------------------------------------------
 
 server <- function(input, output, session) {
@@ -51,48 +92,16 @@ server <- function(input, output, session) {
   completion_code <- sd_completion_code(10)
   sd_store_value(completion_code)
 
-  # Read in the full survey design file
-  design <- read_csv(here("data", "choice_questions.csv"))
-
   # Sample a random respondentID and store it in your data
   respondentID <- sample(design$respID, 1)
   sd_store_value(respondentID, "respID")
 
   # Filter for the rows for the chosen respondentID
   df <- design |>
-    filter(respID == respondentID) |>
-    # Paste on the "images/" path (images are stored in the "images" folder)
-    mutate(image = paste0("images/", image))
+    filter(respID == respondentID)
 
-  # Function to create the options table for a given choice question
-  make_cbc_table <- function(df) {
-    alts <- df |>
-      mutate(
-        price = paste(scales::dollar(price), "/ lb"),
-        image = paste0('<img src="', image, '" width=100>')
-      ) |>
-      # Make nicer attribute labels
-      select(
-        `Option:` = altID,
-        ` ` = image,
-        `Price:` = price,
-        `Type:` = type,
-        `Freshness:` = freshness
-      )
-    row.names(alts) <- NULL # Drop row names
-
-    table <- kbl(t(alts), escape = FALSE) |>
-      kable_styling(
-        bootstrap_options = c("striped", "hover", "condensed"),
-        full_width = FALSE,
-        position = "center"
-      )
-    function() {
-      table
-    }
-  }
-
-  # Create the options for each choice question
+  # Create the options for each choice question (using the helper function above)
+  # NOTE: This example contains 6 choice questions - update as needed for your study
   output$cbc1_table <- make_cbc_table(df |> filter(qID == 1))
   output$cbc2_table <- make_cbc_table(df |> filter(qID == 2))
   output$cbc3_table <- make_cbc_table(df |> filter(qID == 3))
