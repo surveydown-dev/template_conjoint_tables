@@ -31,7 +31,7 @@ library(dplyr)
 library(kableExtra)
 ```
 
-::: {.sd_page id=welcome}
+--- welcome
 
 # Template - Choice-based-conjoint Survey
 
@@ -49,9 +49,7 @@ This is a template of choice-based-conjoint survey. For this survey, we will ask
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=consent}
+--- consent
 
 # Consent
 
@@ -83,9 +81,7 @@ sd_question(
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=favorite_fruit}
+--- favorite_fruit
 
 # Favorite Fruit
 
@@ -110,9 +106,7 @@ sd_question(
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=screening}
+--- screening
 
 # Screening Questions
 
@@ -134,9 +128,7 @@ sd_question(
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=educational}
+--- educational
 
 # Educational Page
 
@@ -174,9 +166,7 @@ Fuji | Gala | Honeycrisp | Pink Lady | Red Delicious
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=cbc_practice_page}
+--- cbc_practice_page
 
 # Choice-based Conjoint (cbc) Practice
 
@@ -231,9 +221,7 @@ sd_question(
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=cbc_intro}
+--- cbc_intro
 
 # Conjoint Question Intro
 
@@ -245,9 +233,7 @@ We will now show you 6 sets of choice questions starting on the next page.
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=cbc_q1_page}
+--- cbc_q1_page
 
 <center>
 ## Conjoint Question 1 of 6
@@ -267,9 +253,7 @@ sd_question(
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=cbc_q2_page}
+--- cbc_q2_page
 
 <center>
 ## Conjoint Question 2 of 6
@@ -289,9 +273,7 @@ sd_question(
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=cbc_q3_page}
+--- cbc_q3_page
 
 <center>
 ## Conjoint Question 3 of 6
@@ -311,9 +293,7 @@ sd_question(
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=cbc_q4_page}
+--- cbc_q4_page
 
 <center>
 ## Conjoint Question 4 of 6
@@ -333,9 +313,7 @@ sd_question(
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=cbc_q5_page}
+--- cbc_q5_page
 
 <center>
 ## Conjoint Question 5 of 6
@@ -355,9 +333,7 @@ sd_question(
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=cbc_q6_page}
+--- cbc_q6_page
 
 <center>
 ## Conjoint Question 6 of 6
@@ -377,9 +353,7 @@ sd_question(
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=apple_knowledge}
+--- apple_knowledge
 
 # Apple Knowledge
 
@@ -427,9 +401,7 @@ sd_question(
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=demographics}
+--- demographics
 
 # Demographics Page
 
@@ -542,9 +514,7 @@ sd_next()
 
 :::
 
-:::
-
-::: {.sd_page id=end_normal}
+--- end_normal
 
 # End Page
 
@@ -558,9 +528,7 @@ You may close the window now.
 sd_close()
 ```
 
-:::
-
-::: {.sd_page id=end_consent}
+--- end_consent
 
 # End Page
 
@@ -570,9 +538,7 @@ The survey is now finished. You may close the window.
 sd_close()
 ```
 
-:::
-
-::: {.sd_page id=end_screenout}
+--- end_screenout
 
 # End Page
 
@@ -583,5 +549,3 @@ The survey is now finished. You may close the window.
 ```{r}
 sd_close()
 ```
-
-:::
