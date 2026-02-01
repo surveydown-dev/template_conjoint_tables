@@ -111,14 +111,14 @@ server <- function(input, output, session) {
 
   # Define conditional skip logic (skip to page if a condition is true)
   sd_skip_if(
-    input$screenout == "blue" ~ "end_screenout",
-    input$consent_age == "no" ~ "end_consent",
-    input$consent_understand == "no" ~ "end_consent"
+    sd_value("screenout") == "blue" ~ "end_screenout",
+    sd_value("consent_age") == "no" ~ "end_consent",
+    sd_value("consent_understand") == "no" ~ "end_consent"
   )
 
   # Define conditional display logic (show a question if a condition is true)
   sd_show_if(
-    input$like_fruit %in% c("yes", "kind_of") ~ "fav_fruit"
+    sd_value("like_fruit") %in% c("yes", "kind_of") ~ "fav_fruit"
   )
 
   # Run surveydown server and define database

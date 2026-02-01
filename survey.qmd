@@ -17,8 +17,8 @@ survey-settings:
   highlight-unanswered: true
   highlight-color: blue
   capture-metadata: true
-  all-questions-required: false
-  required-questions:
+  all-required: false
+  required:
     - consent_age
     - consent_understand
     - screenout
