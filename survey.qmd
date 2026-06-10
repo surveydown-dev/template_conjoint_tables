@@ -9,6 +9,7 @@ theme-settings:
   footer-right: '[<i class="bi bi-github"></i> Source Code](https://github.com/surveydown-dev/template_conjoint_tables)'
 
 survey-settings:
+  mode: preview
   show-previous: false
   use-cookies: true
   auto-scroll: false
