@@ -35,13 +35,12 @@ design <- read_csv(here("data", "choice_questions.csv"))
 # sd_db_config()
 #
 # Once your parameters are stored, you are ready to connect to your database.
-# For this demo, we set ignore = TRUE in the following code, which will ignore
-# the connection settings and won't attempt to connect to the database. This is
-# helpful if you don't want to record testing data in the database table while
-# doing local testing. Once you're ready to collect survey responses, set
-# ignore = FALSE or just delete this argument.
+# This template runs in preview mode (set via `mode: preview` in survey.qmd),
+# which saves responses locally instead of to a database. To collect real
+# responses, run sd_db_config() to store your database credentials, then
+# change `mode` to `database` in the survey.qmd YAML header.
 
-db <- sd_db_connect(ignore = TRUE)
+db <- sd_db_connect()
 
 # UI setup --------------------------------------------------------------------
 
