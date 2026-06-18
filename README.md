@@ -1,6 +1,16 @@
 A conjoint survey template, with option contents shown in a table.
 
-To create this template, run this command in your R console:
+### 🟢 Demo
+
+Try the live survey: https://surveydown-conjoint-tables.hf.space
+
+### Template page
+
+https://surveydown.org/templates/conjoint_tables
+
+### Create this template
+
+Run this command in your R console:
 
 ```r
 surveydown::sd_create_survey(
@@ -9,4 +19,6 @@ surveydown::sd_create_survey(
 )
 ```
 
-Refer to the [Start with a template](https://surveydown.org/docs/getting-started#start-with-a-template) section for more details.
+### Documentation
+
+[Start with a template](https://surveydown.org/docs/getting-started#start-with-a-template)

@@ -11,7 +11,7 @@ theme-settings:
 survey-settings:
   mode: preview
   show-previous: false
-  use-cookies: true
+  use-cookies: false
   auto-scroll: false
   rate-survey: false
   system-language: en
