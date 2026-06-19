@@ -6,7 +6,7 @@ Try the live survey: https://surveydown-conjoint-tables.hf.space
 
 ### 🎬 Walkthrough Recording
 
-[![Walkthrough recording](video-thumbnail.jpg)](https://github.com/surveydown-dev/template_conjoint_tables/blob/main/video-recording.mp4)
+[![Walkthrough recording](video-thumbnail.png)](https://cdn.jsdelivr.net/gh/surveydown-dev/template_conjoint_tables@main/video-recording.mp4)
 
 *Click the image above to play the recording.*
 
