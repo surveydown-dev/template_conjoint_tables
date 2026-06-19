@@ -4,13 +4,11 @@ A conjoint survey template, with option contents shown in a table.
 
 Try the live survey: https://surveydown-conjoint-tables.hf.space
 
-### 🎬 Video
+### 🎬 Walkthrough Recording
 
-A video walkthrough of this template:
+[![Walkthrough recording](video-thumbnail.jpg)](https://github.com/surveydown-dev/template_conjoint_tables/blob/main/video-recording.mp4)
 
-<video src="https://github.com/surveydown-dev/template_conjoint_tables/raw/main/video-recording.mp4" controls width="100%"></video>
-
-[▶ Watch the walkthrough](https://github.com/surveydown-dev/template_conjoint_tables/raw/main/video-recording.mp4)
+*Click the image above to play the recording.*
 
 ### Template page
 
