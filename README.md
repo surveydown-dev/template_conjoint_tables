@@ -1,16 +1,12 @@
+# Template - Conjoint Tables
+
 A conjoint survey template, with option contents shown in a table.
 
-### 🟢 Demo
+### See it in action
 
-Try the live survey: https://surveydown-conjoint-tables.hf.space
-
-### 🎬 Walkthrough Recording
+Watch the **Walkthrough recording:**
 
 [![Walkthrough recording](video-thumbnail.png)](https://cdn.jsdelivr.net/gh/surveydown-dev/template_conjoint_tables@main/video-recording.mp4)
-
-### Template page
-
-https://surveydown.org/templates/conjoint_tables
 
 ### Create this template
 
@@ -23,6 +19,7 @@ surveydown::sd_create_survey(
 )
 ```
 
-### Documentation
+### Learn more
 
-[Start with a template](https://surveydown.org/docs/getting-started#start-with-a-template)
+- [Template page - Conjoint Tables](https://surveydown.org/templates/conjoint_tables)
+- [Document page - Start with a template](https://surveydown.org/docs/getting-started#start-with-a-template)
