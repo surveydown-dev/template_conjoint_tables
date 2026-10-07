@@ -13,4 +13,4 @@ db <- sd_db_connect()
 # Pull in the data
 df <- sd_get_data(db)
 
-write_csv(df, here::here('data', 'data_raw.csv'))
+write_csv(df, file.path('data', 'data_raw.csv'))

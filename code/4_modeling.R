@@ -3,23 +3,38 @@
 # Load libraries
 library(logitr)
 library(tidyverse)
-library(cbcTools)
+library(fastDummies)
 library(janitor)
-library(here)
 
 options(dplyr.width = Inf) # So you can see all of the columns
 
 # -----------------------------------------------------------------------------
 # Load the data set:
-data <- read_csv(here("data", "choice_data.csv"))
+data <- read_csv(file.path("data", "choice_data.csv"))
 head(data)
 
 # Estimate MNL model
+
+# First create some dummy coded variables for categorical variables
+data <- dummy_cols(data, c('type', 'freshness'))
+
+# Clean up names of created variables
+data <- clean_names(data)
+
+# Estimate the model
 model <- logitr(
   data = data,
   outcome = "choice",
-  obsID = "obsID",
-  pars = c("price", "type", "freshness")
+  obsID = "obs_id",
+  pars = c(
+    "price",
+    "type_fuji",
+    "type_gala",
+    "type_honeycrisp",
+    "type_pink_lady",
+    "freshness_average",
+    "freshness_excellent"
+  )
 )
 
 # View summary of results

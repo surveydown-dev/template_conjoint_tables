@@ -6,7 +6,6 @@
 # remotes::install_github("jhelvy/cbcTools")
 
 # Load libraries
-library(here)
 library(cbcTools)
 library(tidyverse)
 
@@ -52,4 +51,4 @@ design <- design |>
 head(design) # preview
 
 # Save design
-write_csv(design, here("data", "choice_questions.csv"))
+write_csv(design, file.path("data", "choice_questions.csv"))

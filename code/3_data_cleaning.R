@@ -1,6 +1,5 @@
 # Load libraries
 library(fastDummies)
-library(here)
 library(lubridate)
 library(tidyverse)
 
@@ -8,7 +7,7 @@ library(tidyverse)
 options(dplyr.widtkh = Inf)
 
 # Import raw data
-data_raw <- read_csv(here("data", "data_raw.csv"))
+data_raw <- read_csv(file.path("data", "data_raw.csv"))
 
 # Format and join the three surveys -------
 
@@ -108,7 +107,7 @@ choice_data <- data %>%
 head(choice_data)
 
 # Read in choice questions and join it to the choice_data
-survey <- read_csv(here("data", "choice_questions.csv"))
+survey <- read_csv(file.path("data", "choice_questions.csv"))
 choice_data <- choice_data %>%
     left_join(survey, by = c("respID", "qID"))
 
@@ -134,4 +133,4 @@ choice_data <- choice_data %>%
 head(choice_data)
 
 # Save cleaned data for modeling
-write_csv(choice_data, here("data", "choice_data.csv"))
+write_csv(choice_data, file.path("data", "choice_data.csv"))

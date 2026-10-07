@@ -4,7 +4,6 @@
 # install.packages("pak")
 # pak::pak(c(
 #   'surveydown-dev/surveydown', # Development version from GitHub
-#   'here',
 #   'glue',
 #   'readr',
 #   'dplyr'
@@ -15,12 +14,11 @@ library(surveydown)
 library(dplyr)
 library(readr)
 library(glue)
-library(here)
 library(kableExtra)
 
 # Read in the full survey design file
 # We'll use this in the server to create the choice questions
-design <- read_csv(here("data", "choice_questions.csv"))
+design <- read_csv(file.path("data", "choice_questions.csv"))
 
 # Database setup --------------------------------------------------------------
 #
